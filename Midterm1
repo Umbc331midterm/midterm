@@ -1,5 +1,4 @@
-"Midterm" by Trevor Braden, Matt Henry
-
+"Midterm" by Trevor Braden, Matt Henry, Hamza Saeed, Tae Song
 Use brief room descriptions.
 
 [Creates the starting room for the game]
@@ -137,4 +136,4 @@ Instead of smelling fumes, say "You don't know what was in that cauldron, other 
 The mirror is an object in the witches chamber. 
 Understand the command "polish" as something new. Understand "polish [something]" as examining.
 Instead of examining mirror, say "Maybe if you rub it enough, a genie will come out!  Good things always happen when you polish and rub things."
-Instead of examining the mirror more than once, say "This mirror must be enchanted, because even your ugly mug kinda looks good. In fact.....you don't finish your thought."
+Instead of examining the mirror more than once, end the story saying "This mirror must be enchanted, because even your ugly mug kinda looks good. In fact.....you don't finish your thought. You feel a presence of a being behind you. You turn arround and see a beautiful princess dressed in all white. She holds her hand out to you and says 'You are my Champion - You are Victorious!'".
