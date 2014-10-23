@@ -1,0 +1,139 @@
+"Midterm" by Trevor Braden, Matt Henry, Hamza Saeed, Tae Song
+Use brief room descriptions.
+
+[Creates the starting room for the game]
+The Nexus is a room. "You find yourself disoriented and confused as you open your eyes, assaulted by the light that comes from above. It's dark, save for the light that dimly lites your immediate surroundings.  There are four archways on each wall, each with a crest.  The archway to the south seems to be blocked."
+
+[Creates a container for the player to hold items in, as well as creating an object in the container]
+The old bag is a container in the Nexus. The carrying capacity of the bag is 4. The note is in the bag.
+The description of the bag is "An old cloth bag you found on the ground. At least it doesn't have holes."
+Instead of examining the note, say "'You thought there'd be anything useful in here? Nope, no plot development yet.'"
+
+[Creates a door that leads to a secret room, which has a description based on the room the player is in]
+Secret Door is a closed door. "[if the player is in the nexus]On the floor, there appears to be a not so secret entrance.[end if][if the player is in the hidden cave]Above you is a small ladder that leads to the secret entrance.[end if]".
+
+[Creates the Hidden Room that the secret door leads to]
+Hidden Cave is a dark room below the secret door. "Oh, look at that. You seem to be in a hidden cave."
+The secret door is below the nexus and above the Hidden Cave.
+Macbeth is a person in the hidden cave. "'Shhhhhhh. No one knows I'm down here.'"
+
+[Creates a room to the east with a light source, edelweiss, and a stairway leading up]
+Chamber of Regret is east of the nexus. "You take one look at this room and immediately regret coming here.  There's one faint light source in the middle of the room, and what you make out to be a tunnel just past it. On the walls are hideous carvings of the most disgusting things you could ever imagine."
+The lantern is in the Chamber of Regret. "There appears to be a lantern hanging near the entrance."
+The lantern is lit.
+Wall carvings are scenery in the chamber of regret. 
+Instead of examining wall carvings at least once, say "Why would you want to look at this stuff?!"
+Instead of taking scenery in the chamber of regret, say "You can't take that."
+Edelweiss is an object in chamber of regret. "Edelweiss is growing between the cracks in the floor."
+
+[Creates the staircase that will lead to the cave entrance]
+The staircase of regret is an open door. "[if the player is in the chamber of regret]A staircase in the northeast corner leads upward.[end if][if the player is in the cave entrance]A staircase below corner leads downward.[end if]".
+The staircase of regret is above the chamber of regret and below the Cave Entrance. The staircase of regret is not openable.
+
+[Describes the cave entrance and creates a door that leads to the cave]
+The description of the cave entrance is "You enter a tiny room, just big enough to stand in.  It seems to be the entrance to some sort of cave to the west, and a tiny opening to the north."
+An open door called The Cave is west of the cave entrance and south of the Interior. The Cave is openable. The description of the Interior is "The cave leads to a much bigger room than the previous one, but barely lit.  It's hard to make out what exactly is in here."
+
+[Creates a statue, and a helmet object that can be placed onto the statue]
+The statue is an object in the Interior. "A lone statue of what appears to be missing his helmet stands crumbling in the corner."
+The helmet is an object in the interior. "On the ground near the statue lies a stone helmet."
+Understand "attach [thing] to [something]" as putting it on.
+Instead of putting helmet on the statue: 
+	say "There is a rumble around you, and you see the prism appear before you on the ground.  The entrance behind you has been sealed off.  When you look up, you see the pickle in all it's glory is next to you on a pedestal.";
+	if the cave entrance is open:
+		Now the cave has been closed;
+	
+[Creates the prism and pickle objects that will be used later]
+Prism is an object in the interior. "Near the fire pit is a dull prism."
+Pickle is an object in the interior. "Next to the prism is a half-eaten pickle."
+		
+[Creates a fire container]
+The fire is an openable container in the Interior. "There seems to be the remnants of an old fire pit in the middle, with the tools to light it nearby." The fire is open.
+
+[Changes the light command so that the fire can actually be lit by the player]
+Understand the command "light" as something new. Understand "light [something]" as opening.
+Instead of opening the fire, say "The fire is lit."
+	
+[Allows things to be put into a fire]
+Understand "put [something] in [something]" as inserting it into.
+Instead of taking fire, say "Are you mad?! You'll burn to death!"	
+	
+[Makes waiting a bit more fun]	
+Instead of waiting once, say "You wait for no apparent reason."
+Instead of waiting more than once, say "You wait yet again, hoping for god knows what to happen."
+
+[Defines what the verb showing is and opens the cave entrance after prism is shown to pickle]
+Understand "show [thing] to [something]" as putting it on.
+Instead of putting prism on the pickle: 
+	say "This will suffice. You may now leave.";
+	if the cave entrance is closed:
+		Now the cave is open;
+		
+[Defines exit to mean going through]
+Understand "exit [something]" as going.
+
+[Creates a room north of the cave entrance with the knight in it]
+North of the cave entrance is The Great Hall. 
+The description of the great hall is "You come upon a magnificent room with crests and banners strung about the great pillars that hold up the ceiling.  In the middle of the room is a long, round table."
+The Knight is a person in the great hall. "At the head of the table is what appears to be a suit of armor."
+Understand "suit" as the knight.
+Instead of examining the knight, say "A very tall and shiny suit of armor. It almost looks as if it's alive..."
+
+[Creates a meaning of life object to ponder]
+A thought is a kind of thing. The meaning of life is a thought in the great hall.
+Understand "ponder [something]" as examining.
+Instead of the player examining the meaning of life, say "You think about your current situation, and how much time you've wasted in it.  Surely it could be better spent than just standing here thinking about it."
+
+[Makes the knight respond to your inquery into xyzzy]
+Saying xyzzy to is an action applying to one visible thing.
+Understand "say xyzzy to [someone]" as saying xyzzy to.
+Instead of saying xyzzy to the knight, say "As if by magic, the suit of armor's eyes light up, and it starts to move. The knight is alive! He stretches out a bit, and looks down upon you.  He looks you up and down, as if measuring your worth, then points east. With that, the knight returns to his stationary position and all signs of life seem to vanish."
+
+[Creates the hallway where the duck resides]
+East of the great hall is The Hall of Cheese Quackers. 
+The description of the hall of cheese is "As you walk in, you can't believe your eyes; piles of endless cheese and crackers line this long hallway! "
+
+[Creates the duck and a warning note]
+The duck is an object in the Hall of cheese.  "At the very end of the hallway sits a duck.  Just a plain old duck."
+
+[Makes the duck edible]
+The duck is edible. Instead of eating the duck, say "The duck looks around, minding it's own business.  As you approach the duck and pick it up, it looks up at you with it's simple duck eyes, not knowing these will be it's last moments, it's last sight being your twisted face.  The duck's screams can be heard echoed through the hall as you bit into it's feathery flesh. The crackers now have a new condiment on them."
+The object called sketchy note is in the hall of cheese. "On the floor next to your feet seems to be an old note. It looks urgent."
+Instead of examining the sketchy note, say "'I wouldn't eat this stuff if I were you. Kind of like a Cave of Wonders deal, so don't touch anything!'"
+
+[Creates a room where the cauldron resides]
+North of the hall of cheese is The Witches Chamber. 
+The description of the witches room is "Contrary to the hall you were just in, nothing in here looks edible.  You even think that those jars are filled with.....eghh.  The room has many shelves that have ingredients of all sorts, for making potions obviously." 
+
+[Creates a cauldron and ginger to be put into the cauldron] 
+The Cauldron is a closed container in the witches chamber. "In the middle of the room sits a large cauldron, bubbling a green ooze." The cauldron is openable.
+Ginger is an object in the witches chamber. "The ginger stands out from the other ingredients."
+Instead of examining the ginger, say "This ingredient in particular draws your attention, as if begging to be used."
+
+[Creates a fire for the cauldron]
+The openable container called pot fire is in the witches chamber.  The pot fire is openable.
+The description of the pot fire is "A pile of timber is stacked neatly underneath the cauldron.  If there's no fire, why is the cauldron bubbling?"
+Instead of opening the pot fire, say "The fire is lit."
+
+[Defines what happens when ginger is put into cauldron]
+Instead of inserting ginger into cauldron: 
+	say "As you plop the ginger in, the cauldron bubbles furiously and out emerges no other than Macbeth himself!";
+	move Macbeth to the witches chamber;
+
+[Defines an action so the player can talk to macbeth]
+Saying plugh to is an action applying to one visible thing.
+Understand "say plugh to [someone]" as saying plugh to.
+
+[Defines what happens when you talk to macbeth]
+Instead of saying plugh to macbeth, say "Your hallowed voice says plugh to Macbeth, and he is utterly confused."
+
+[Creates fumes for the fire and how to properly inhale and hold]
+Fumes is an object in the witches chamber.
+Understand "inhale [something]" as smelling.
+Instead of smelling fumes, say "You don't know what was in that cauldron, other than the ginger, but boy would it make the dealers back home jealous."
+
+[Creates a mirror in the room to end it all]
+The mirror is an object in the witches chamber. 
+Understand the command "polish" as something new. Understand "polish [something]" as examining.
+Instead of examining mirror, say "Maybe if you rub it enough, a genie will come out!  Good things always happen when you polish and rub things."
+Instead of examining the mirror more than once, end the story saying "This mirror must be enchanted, because even your ugly mug kinda looks good. In fact.....you don't finish your thought. You feel a presence of a being behind you. You turn arround and see a beautiful princess dressed in all white. She holds her hand out to you and says 'You are my Champion - You are Victorious!'".
